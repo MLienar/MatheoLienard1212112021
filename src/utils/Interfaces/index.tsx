@@ -2,7 +2,7 @@ export interface User {
     id: number,
     userInfos: userInfos,
     score: number,
-    keyData: keyData
+    keyData: KeyData
 }
 
 type userInfos = {
@@ -11,9 +11,20 @@ type userInfos = {
     age: number
 }
 
-type keyData = {
+export interface KeyData {
     calorieCount: number,
     proteinCount: number,
     carbohydrateCount: number,
     lipidCount: number
+}
+
+export interface Activity {
+    userId: number,
+    sessions: Session[]
+}
+
+type Session = {
+    day: string,
+    kilogram: number,
+    calories: number
 }
