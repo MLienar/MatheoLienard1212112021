@@ -18,13 +18,17 @@ export interface KeyData {
     lipidCount: number
 }
 
-export interface Activity {
-    userId: number,
-    sessions: Session[]
-}
-
 type Session = {
     day: string,
     kilogram: number,
     calories: number
+}
+
+export interface Activity {
+    sessions: Session[]
+}
+
+export interface UserActivity {
+    userId: number,
+    sessions: Session[]
 }

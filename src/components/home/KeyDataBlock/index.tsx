@@ -16,7 +16,6 @@ const DataBlock = styled.div`
     justify-content: flex-start;
     padding: 24px;
     border-radius: 5px;
-    margin: 3vh 0;
 `
 
 const ImgBlock = styled.div`
