@@ -7,7 +7,7 @@ import KeyDataContainer from '../components/home/KeyDataContainer';
 import DailyActivity from '../components/home/DailyActivity';
 import AverageSession from '../components/home/AverageSessions';
 import PhysicalStats from '../components/home/PhysicalStats';
-
+import TodayScore from '../components/home/TodayScore';
 import styled from 'styled-components';
 
 const MainScreen = styled.main`
@@ -36,7 +36,6 @@ const SmallGraph = styled.div`
   justify-content: center;
   align-items: center;
   height: 80%;
-  align-self: center;
 `
 
 const SmallGraph1 = styled(SmallGraph)`
@@ -54,7 +53,7 @@ const SmallGraph3 = styled(SmallGraph)`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, 50%);
   grid-gap: 30px;
   flex: 3 1 66%;
@@ -78,9 +77,8 @@ function Home() {
             <PhysicalStats/>
           </SmallGraph2>
           <SmallGraph3>
-            <PhysicalStats/>
+            <TodayScore />
           </SmallGraph3>
-          <SmallGraph></SmallGraph>
         </Grid>
         <KeyDataContainer/>
       </Dashboards>
