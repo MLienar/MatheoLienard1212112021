@@ -32,3 +32,27 @@ export interface UserActivity {
     userId: number,
     sessions: Session[]
 }
+
+type SessionDuration = {
+    day: number,
+    sessionLength: number
+}
+
+export interface AverageSessions {
+    userId: number, 
+    sessions: SessionDuration[]
+}
+
+export interface SessionsOnly {
+    sessions: SessionDuration[]
+}
+
+export type Performances = {
+    value: number,
+    kind: number | string
+}
+
+export interface PerformancesObj {
+    performances: Performances[]
+}
+

@@ -20,7 +20,6 @@ export default function DailyActivity () {
     useEffect(() => {
         ProfileService.getActivity(18)
         .then((response:any) => {
-            console.log(response);
             setActivity(response.data.data)
         })
         }, []) 

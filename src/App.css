@@ -65,3 +65,7 @@ table {
 	display: grid;
 	grid-template-rows: minmax(8vh, auto) minmax(0, 100%);
 }
+
+.recharts-polar-angle-axis-tick-value {
+	text-transform: capitalize;
+}
