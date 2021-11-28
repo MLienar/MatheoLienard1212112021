@@ -1,4 +1,36 @@
-import { useState, useEffect } from "react"
+/**
+ * # Average Sessions
+ * Gets average sessions from API and sends it to LineChart component to display
+ * 
+ * ## Get Sessions from API
+ * Get sessions data from API on component Load, set it in state. Id is mocked in current version
+ * 
+ * ```tsx
+ *    useEffect(() => {
+ *      ProfileService.getSessions(18)
+ *      .then((response:any) => {
+ *           setSessions(response.data.data)
+ *       })
+ *       }, []) 
+ * ``` 
+ * @param integer User Id that we pass to the API
+ * @return Sessions for the current user  
+ * 
+ * ## Display LineChart 
+ * ```tsx
+ *  <Container>
+ *           <Title>Durée moyenne des sessions</Title> 
+ *          { sessions && (
+ *               <LineChart sessions={ sessions.sessions } />
+ *           )
+ *           }
+ *       </Container>
+ * ```
+ * 
+ *@module AverageSessions
+ */
+
+import { useState, useEffect, ReactElement } from "react"
 import ProfileService from "../../../services/profile.service";
 import { AverageSessions } from "../../../utils/Interfaces";
 import LineChart from "./LineChart";
@@ -25,14 +57,8 @@ const Title = styled.h2`
     width: 60%;
 `
 
-export default function AverageSession() {
+export default function AverageSession():ReactElement {     
     const [ sessions, setSessions ] = useState<AverageSessions>()
-
-    /**
-     * Get sessions data from API on component Load, set it in state
-     * @param { id } integer
-     * @return { sessions } 
-     */
     
     useEffect(() => {
         ProfileService.getSessions(18)

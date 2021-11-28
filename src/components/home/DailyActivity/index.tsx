@@ -1,3 +1,33 @@
+/**
+ * Gets daily activity from API and sends it to BarChart component to display
+ * 
+ * ## Get Activity from API
+ * Get activity data from API on component Load, set it in state. Id is mocked in current version
+ * 
+ * ```tsx
+ *    useEffect(() => {
+ *      ProfileService.getActivity(18)
+ *      .then((response:any) => {
+ *           setActivity(response.data.data)
+ *       })
+ *       }, []) 
+ * ``` 
+ * @param integer User Id that we pass to the API
+ * @return Activity for the current user  
+ * 
+ * ## Display LineChart 
+ * ```tsx
+ *  <Dashboard>
+ *          { activity && (
+ *               <LineChart activity={ activity.sessions} />
+ *           )
+ *           }
+*       </Dashboard>
+ * ```
+ * 
+ * @module DailyActivity
+ */
+
 import ProfileService from "../../../services/profile.service";
 import { UserActivity } from "../../../utils/Interfaces";
 import { useState, useEffect } from "react";

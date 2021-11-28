@@ -1,15 +1,43 @@
+/**
+ * @module AverageSessions/LineChart
+ */
+
+import { ReactElement } from "react"
 import { ResponsiveContainer, Tooltip, LineChart as Chart, XAxis, YAxis, Line } from "recharts"
 import { SessionsOnly } from "../../../../utils/Interfaces"
 import { RenderTooltip } from "./Tooltip.tsx"
 
 /**
- * Component for showing a Average Sessions Linechart
- * @component
- * @param { SessionsOnly } props
- * @return { object  } 
+ * Recharts component that displays the average sessions LineChart in the bottom left   
+ * @param props 
+ * @returns ChartContainer
+ * 
+ * ### Format Date on X Axis
+ * 
+ * ```tsx
+ * const formatXAxis = (props: number) => {
+    *      const tickItem  = props
+    *     
+    *    switch(tickItem) {
+    *       case 1: 
+    *           return "L"
+    *       case 2:
+    *           return "M"
+    *       case 3:
+    *          return "M"
+    *      case 4:
+    *           return "J"
+    *      case 5:
+    *           return "V"
+    *       case 6:
+    *           return "S"
+    *       case 7:
+    *          return "D"
+    *    }
+    * ```
  */
 
-export default function LineChart(props:SessionsOnly) {
+export default function LineChart(props:SessionsOnly):ReactElement {
     const data = props.sessions
     const formatXAxis = (props: number) => {
         const tickItem  = props

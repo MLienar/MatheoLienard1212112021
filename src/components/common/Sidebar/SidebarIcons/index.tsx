@@ -5,7 +5,13 @@
 
 import { ReactElement } from "react"
 import styled from "styled-components"
+/** 
+ * @typedef { Object } Props
+ * @property {string} icon,
+ * @property {stirng} url
+ */
 
+/** @type {Props} */
 interface Props {
     icon: string,
     alt: string

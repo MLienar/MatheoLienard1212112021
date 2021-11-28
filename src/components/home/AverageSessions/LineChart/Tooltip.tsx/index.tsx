@@ -1,3 +1,8 @@
+/** 
+ * Component that displays the tooltip on the line chart
+ * @module AverageSessions/LineChart-Tooltip
+ */
+
 import styled from "styled-components";
 
 const Container = styled.div`
