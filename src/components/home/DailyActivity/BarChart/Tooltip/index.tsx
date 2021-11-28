@@ -13,7 +13,6 @@ const ListItem = styled.li`
 
 export const RenderTooltip = (props:any) => {
     const { payload } = props;
-    console.log(payload);
     
     return(
         <Container>

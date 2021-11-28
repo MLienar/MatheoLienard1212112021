@@ -1,4 +1,4 @@
-import styled from "styled-components"
+  import styled from "styled-components"
 
 interface Props {
     type: string,
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const DataBlock = styled.div`
-    background: var(--grey);
+    background: var(--grey); 
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -55,6 +55,10 @@ const Descriptor = styled.p`
     color: #74798C;
     margin-top: 5px;
 `
+
+/**
+ * This comment _supports_ [Markdown](https://marked.js.org/)
+ */
 
 export default function KeyDataBlock (props: Props) {
     const iconBackground = {

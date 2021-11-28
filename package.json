@@ -20,6 +20,7 @@
     "react-scripts": "4.0.3",
     "recharts": "^2.1.6",
     "styled-components": "^5.3.3",
+    "typedoc": "^0.22.10",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -27,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "docs": "typedoc",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

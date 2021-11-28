@@ -14,7 +14,6 @@ const Container = styled.div`
     height: 100%;
     border-radius: 5px;
     padding: 0 5px;
-
 `
 
 const Title = styled.h2`

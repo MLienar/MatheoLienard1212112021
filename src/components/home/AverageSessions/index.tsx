@@ -28,6 +28,12 @@ const Title = styled.h2`
 export default function AverageSession() {
     const [ sessions, setSessions ] = useState<AverageSessions>()
 
+    /**
+     * Get sessions data from API on component Load, set it in state
+     * @param { id } integer
+     * @return { sessions } 
+     */
+    
     useEffect(() => {
         ProfileService.getSessions(18)
         .then((response:any) => {

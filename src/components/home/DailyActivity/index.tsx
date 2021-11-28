@@ -5,6 +5,12 @@ import styled from "styled-components";
 import BarChart from "./BarChart";
 
 
+/**
+ * Component that sets activity in state and generates BarChart afterwards
+ *
+ * @component
+ */
+
 const Dashboard = styled.div`
     grid-area: 1 / 1 / 2 / 4;
     background: var(--grey);

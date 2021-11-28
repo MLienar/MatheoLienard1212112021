@@ -1,0 +1,6 @@
+{
+    "entryPoints": ["./src/components", "./src/pages", "./src/services", "./src/Interfaces"],
+    "entryPointStrategy": "Expand",
+    "sort": ["source-order"],
+    "$schema": "https://typedoc.org/schema.json"
+}

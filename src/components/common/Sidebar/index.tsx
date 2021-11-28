@@ -1,3 +1,17 @@
+/**
+ * Renders the site Sidebar
+ * 
+ * 
+ * ```tsx
+ * <Sidebar >
+ *     ... Sidebar Icons
+ *     <Copyright></Copyright>
+ * </Sidebar>
+ * ```
+ * 
+ *@module Sidebar
+ */
+
 import styled from "styled-components"
 import SidebarIcons from "./SidebarIcons"
 
@@ -7,6 +21,7 @@ import {
     Bike, 
     Fitness
 } from "../../../assets/img/index"
+import { ReactElement } from "react"
 
 const SidebarContainer = styled.nav`
     display: flex;
@@ -26,7 +41,7 @@ const Copyright = styled.p`
     margin-top: 20vh;
 `
 
-export default function Sidebar() {
+export default function Sidebar() : ReactElement{
     return(
         <SidebarContainer>
             <SidebarIcons icon={Yoga} alt="Yoga" />

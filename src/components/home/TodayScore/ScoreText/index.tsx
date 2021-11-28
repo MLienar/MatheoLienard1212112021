@@ -21,7 +21,7 @@ const Score = styled.p`
 `
 const Details = styled.p`
     color: #59656c;
-    width: 50%;
+    width: 60%;
     margin-top: 10px;
     font-size: 13px;
 `

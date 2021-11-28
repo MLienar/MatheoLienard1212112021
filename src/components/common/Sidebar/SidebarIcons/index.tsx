@@ -1,3 +1,9 @@
+/**
+ * Returns icons in sidebar 
+ * @module SidebarIcons
+ */
+
+import { ReactElement } from "react"
 import styled from "styled-components"
 
 interface Props {
@@ -21,8 +27,25 @@ const Img = styled.img`
     width: auto;
 `
 
-export default function SidebarIcons(props:Props) {
-    console.log(props.icon);
+/**
+ * Renders an icon based on props.
+ *
+ * ```tsx
+ * <Icon>
+ *  <img src={props.url} alt={props.alt} />
+ * </Icon>
+ * ```
+ *
+ * The props type is defined as a separate interface 
+ * ```
+ * interface Props {
+ *     icon: the icon url,
+ *     alt: the icon alt tag
+ * }
+ *
+ */
+
+export default function SidebarIcons(props:Props) : ReactElement {
     
     return(
         <Icon>

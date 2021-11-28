@@ -1,6 +1,13 @@
+/**
+ * Renders the site Header 
+ * @module Header
+ */
+
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import Logo from "../../../assets/img/logo.svg"
+import { ReactElement } from "react"
+
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -20,8 +27,7 @@ const LogoImg = styled.img`
     height: clamp(30px, 4vh, 60px)
 `
 
-
-export default function Header () {
+export default function Header (): ReactElement {
     return (
     <HeaderContainer>
         <LogoImg src={Logo} alt="logo" />
