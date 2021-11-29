@@ -1,15 +1,16 @@
 /**
- * Displays Daily Activity Bar Chart in the top left corner
+ * Rechart components that displays Daily Activity Bar Chart in the top left corner
  * 
  * @module DailyActivity/BarChart
  */
 
+import { ReactElement } from "react";
 import { BarChart as Chart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip, ResponsiveContainer  } from "recharts";
 import { Activity } from '../../../../utils/Interfaces'
 import { RenderLegend } from "./Legend"
 import { RenderTooltip } from "./Tooltip";
 
-export default function BarChart(props:Activity) {
+export default function BarChart(props:Activity):ReactElement {
     const activity = props.sessions
 
     const legendStyle = {

@@ -1,3 +1,22 @@
+/**
+ * Component that displays userName on top of the dasboard
+ * 
+ * ## API call
+ * 
+ * Get username from API (user Id is fixed in this version)
+ * 
+ * ```tsx
+ *     useEffect(() => {
+ *       ProfileService.getUser(18)
+ *           .then((response:any) => {
+ *               setUser(response.data.data)                
+ *           })
+ *   }, [])
+ * ```
+ * 
+ * @module UserGreeting
+ */
+
 import { User } from "../../../utils/Interfaces";
 import ProfileService from "../../../services/profile.service";
 import { useState, useEffect } from "react"

@@ -1,3 +1,8 @@
+/**
+ * Displays the tooltip on the BarChart
+ * @module DailyActivity/BarChart-Tooltip
+ */
+
 import styled from "styled-components";
 
 const Container = styled.div`

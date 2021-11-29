@@ -1,3 +1,20 @@
+/**
+ * Displays the legend on the BarChart
+ * 
+ * ## Unit formatter
+ * 
+ * Function that returns the unit value to be displayed based on the dataKey in payload
+ * 
+ * ```tsx
+ *   for (const entry of payload) {
+ *       entry.dataKey === "kilogram" ? entry.value = "Poids (kg)" : entry.value = "Calories brûlées (kCal)"
+ *  }
+ * ```
+ * 
+ * @module DailyActivity/BarChart-Legend
+ */
+
+
 import styled from "styled-components";
 
 const LegendContainer = styled.div`

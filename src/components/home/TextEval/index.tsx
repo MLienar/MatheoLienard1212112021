@@ -1,3 +1,10 @@
+/**
+ * Component that displays yesterday's evaluation on top of the dashboard
+ * For now, its static 
+ * 
+ * @module TextEval
+ */
+
 import styled from 'styled-components'
 
 const Text = styled.p`

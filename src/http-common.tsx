@@ -1,3 +1,8 @@
+/**
+ * Module that exports default axios config. Used by ProfileService
+ * @module Http-common
+ */
+
 import axios from "axios";
 
 export default axios.create({

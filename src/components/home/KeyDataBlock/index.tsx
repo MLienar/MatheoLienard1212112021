@@ -1,4 +1,32 @@
-  import styled from "styled-components"
+/**
+ * Returns Data Block that is displayed in the right column
+ * 
+ * ## Props format : 
+ * 
+ * ```tsx
+ * interface Props {
+ *   type: string,
+ *   amount: number,
+ *   icon: string,
+ *   alt: string,
+ *   unit: string,
+ *   color: string
+ * }
+ *
+ * ```
+ * 
+ * ## NumbersWithCommas
+ * 
+ * Function that replaces dots in amount with commas, based on RegEx
+ *     
+ * ```tsx
+ * const numberWithCommas = props.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+ * ```
+ * 
+ * @module KeyDataBlock
+ */
+
+import styled from "styled-components"
 
 interface Props {
     type: string,
@@ -55,10 +83,6 @@ const Descriptor = styled.p`
     color: #74798C;
     margin-top: 5px;
 `
-
-/**
- * This comment _supports_ [Markdown](https://marked.js.org/)
- */
 
 export default function KeyDataBlock (props: Props) {
     const iconBackground = {

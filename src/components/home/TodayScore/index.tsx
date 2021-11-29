@@ -1,3 +1,22 @@
+/**
+ * Gets today's performance score from the API and sends it to RadialBarChart component
+ * 
+ * ## Get data from API
+ * 
+ * User ID is static in this version
+ * 
+ * ```tsx
+ *     useEffect(() => {
+ *       ProfileService.getUser(18)
+ *           .then((response:any) => {
+ *               setScore(response.data.data.score)                
+ *           })
+ *   }, [])
+ * ```
+ * 
+ * @module TodayScore
+ */
+
 import { useState, useEffect } from "react"
 import ProfileService from "../../../services/profile.service"
 import styled from "styled-components"

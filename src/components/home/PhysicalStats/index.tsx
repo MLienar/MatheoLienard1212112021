@@ -1,3 +1,38 @@
+/**
+ * Calls API to get Physical Stats and pass them to the SpiderWeb component
+ * 
+ * ## API call
+ * 
+ * ```tsx
+ *   useEffect(() => {
+ *       profileService.getPerformance(18)
+ *       .then((response:any) => {
+ *           const objectToHandle = response.data.data
+ *           const finalData:PerformancesObj = {
+ *               performances: []
+ *           }
+ *           ...
+ *           setPerformance(finalData)
+ *       })
+ *   }, [])
+ * ```
+ * 
+ * After getting data from the API, we need to create an array with one object per type of performance
+ * 
+ * ```tsx
+ * for (const individualPerformance of objectToHandle.data) {
+ *   const key = individualPerformance.kind
+ *   if (key in objectToHandle.kind) {
+ *     individualPerformance.kind = objectToHandle.kind[key]
+ *     finalData.performances.push(individualPerformance)
+ *    }
+ *  }
+ * setPerformance(finalData)
+ * ```
+ * 
+ * @module PhysicalStats
+ */
+
 import profileService from "../../../services/profile.service";
 import { useState, useEffect } from "react"
 import SpiderWeb from "./SpiderWeb";

@@ -1,3 +1,9 @@
+/**
+ * Recharts component that displays a RadarChart with the daily physical stats categories
+ *
+ * @module PhysicalStats/SpiderWeb
+ */
+
 import { PerformancesObj } from "../../../../utils/Interfaces";
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer} from "recharts";
 

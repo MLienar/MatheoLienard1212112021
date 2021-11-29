@@ -1,3 +1,8 @@
+/**
+ * Displays score as percentage inside the RadialBar Chart 
+ * @module TodayScore/ScoreText
+ */
+
 import styled from 'styled-components'
 
 interface Props {

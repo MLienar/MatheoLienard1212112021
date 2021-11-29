@@ -1,3 +1,9 @@
+/**
+ * Component that exports all custom interfaces needed to handle API Data
+ * 
+ * @module Interfaces
+ */
+
 export interface User {
     id: number,
     userInfos: userInfos,

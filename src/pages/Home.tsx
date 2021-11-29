@@ -1,3 +1,7 @@
+/** 
+ * @module HomePage
+ */
+
 import React from 'react';
 import '../App.css';
 
