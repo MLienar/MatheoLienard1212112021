@@ -40,6 +40,7 @@
 
 import http from "../http-common"
 import { User, Activity, AverageSessions, Performances } from '../utils/Interfaces'
+import ErrorComponent from "../components/common/Error"
 
 class ProfileService {
     getUser(id: number) {
@@ -55,6 +56,7 @@ class ProfileService {
     getPerformance(id:number) {
         return http.get<Performances>(`/${id}/performance`)
     }
+
 }
 
 export default new ProfileService()

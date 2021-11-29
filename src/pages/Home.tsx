@@ -14,6 +14,9 @@ import PhysicalStats from '../components/home/PhysicalStats';
 import TodayScore from '../components/home/TodayScore';
 import styled from 'styled-components';
 
+import { useState  } from 'react';
+import ErrorComponent from '../components/common/Error';
+
 const MainScreen = styled.main`
   padding: 5vh 7vw;
   width: 100%;
@@ -65,26 +68,37 @@ const Grid = styled.div`
 `
 
 function Home() {
+
+  const [error, setError] = useState(false)
+
+  const handleError = (errorData:boolean) => {
+    setError(errorData)
+  }
+
   return (
     <MainScreen>
+
       <Header>
-        <UserGreeting />
+        <UserGreeting handleError={ handleError }/>
         <TextEval />
       </Header>
       <Dashboards>
+        { error && (
+          <ErrorComponent errorMessage="Impossible de joindre le serveur"/>
+        )}
         <Grid>
-          <DailyActivity />
+          <DailyActivity handleError={ handleError }/>
           <SmallGraph1>
-            <AverageSession/>
+            <AverageSession handleError={ handleError }/>
           </SmallGraph1>
           <SmallGraph2>
-            <PhysicalStats/>
+            <PhysicalStats handleError={ handleError }/>
           </SmallGraph2>
           <SmallGraph3>
-            <TodayScore />
+            <TodayScore  handleError={ handleError }/>
           </SmallGraph3>
         </Grid>
-        <KeyDataContainer/>
+        <KeyDataContainer handleError={ handleError }/>
       </Dashboards>
     </MainScreen>
   );

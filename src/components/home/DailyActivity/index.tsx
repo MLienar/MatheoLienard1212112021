@@ -34,7 +34,6 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import BarChart from "./BarChart";
 
-
 /**
  * Component that sets activity in state and generates BarChart afterwards
  *
@@ -50,15 +49,21 @@ const Dashboard = styled.div`
     align-items: center;
 `
 
-export default function DailyActivity () {
+interface Props {
+    handleError: any,
+}
+
+export default function DailyActivity (props:Props) {
     const [ activity, setActivity ] = useState<UserActivity>()
 
     useEffect(() => {
         ProfileService.getActivity(18)
         .then((response:any) => {
             setActivity(response.data.data)
+        }, (err) => {
+            props.handleError(true)
         })
-        }, []) 
+        }, [props]) 
 
 
     return(

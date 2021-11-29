@@ -46,6 +46,7 @@ import {
     Cheeseburger
 } from '../../../assets/img/index'
 
+
 const DataContainer = styled.div`
     min-height: 100%;
     display: flex;
@@ -61,15 +62,21 @@ const DummyDiv = styled.div`
     align-items: stretch;
 `
 
-export default function KeyDataContainer() {
+interface Props {
+    handleError: any
+}
+
+export default function KeyDataContainer(props:Props) {
     const [ keyData, setKeyData ] = useState<KeyData>()
 
     useEffect(() => {
         ProfileService.getUser(18)
         .then((response:any) => {
             setKeyData(response.data.data.keyData)
+        }, (err) => {
+            props.handleError(true)
         })
-        }, []) 
+        }, [props])
 
     return(
         <DataContainer>

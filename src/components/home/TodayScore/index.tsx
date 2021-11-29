@@ -46,16 +46,21 @@ const DummyDiv = styled.div`
     height: 100%;
     position: relative;
 `
+interface Props {
+    handleError: any
+}
 
-export default function TodayScore () {
+export default function TodayScore (props: Props) {
     const [score, setScore ] = useState(0)
 
     useEffect(() => {
         ProfileService.getUser(18)
             .then((response:any) => {
                 setScore(response.data.data.score)                
+            }, (err) => {
+                props.handleError(true)
             })
-    }, [])
+            }, [props])
 
     return(
         <Container>

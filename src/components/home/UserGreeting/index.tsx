@@ -32,6 +32,7 @@ const Name = styled.span`
 `
 
 interface Props {
+    handleError: any
 }
 
 export default function UserGreeting(props:Props) {
@@ -41,8 +42,10 @@ export default function UserGreeting(props:Props) {
         ProfileService.getUser(18)
             .then((response:any) => {
                 setUser(response.data.data)                
+            }, (err) => {
+                props.handleError(true)
             })
-    }, [])
+            }, [props])
 
     return(
         

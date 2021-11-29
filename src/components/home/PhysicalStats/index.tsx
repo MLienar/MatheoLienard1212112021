@@ -39,6 +39,7 @@ import SpiderWeb from "./SpiderWeb";
 import styled from "styled-components";
 import { PerformancesObj } from "../../../utils/Interfaces";
 
+
 const Container = styled.div`
     border-radius: 5px;
     display: flex;
@@ -49,8 +50,11 @@ const Container = styled.div`
     padding: 5px;
     background: #282D30;
 `
+interface Props {
+    handleError: any
+}
 
-export default function PhysicalStats() {
+export default function PhysicalStats(props:Props) {
     const [ performance, setPerformance ] = useState<PerformancesObj>()
 
     useEffect(() => {
@@ -68,8 +72,10 @@ export default function PhysicalStats() {
                 }
             }
             setPerformance(finalData)
+        }, (err) => {
+            props.handleError(true)
         })
-    }, [])
+        }, [props])
 
     return(
         <Container>

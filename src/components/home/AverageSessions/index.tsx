@@ -56,25 +56,30 @@ const Title = styled.h2`
     opacity: 0.5;
     width: 60%;
 `
+interface Props {
+    handleError: any
+}
 
-export default function AverageSession():ReactElement {     
+export default function AverageSession(props: Props):ReactElement {     
     const [ sessions, setSessions ] = useState<AverageSessions>()
     
     useEffect(() => {
         ProfileService.getSessions(18)
         .then((response:any) => {
             setSessions(response.data.data)
+        }, (err) => {
+            props.handleError(true)
         })
-        }, []) 
+        }, [props]) 
 
 
     return(
         <Container>
             <Title>Durée moyenne des sessions</Title> 
-            { sessions && (
+            { sessions && sessions.userId && (
                 <LineChart sessions={ sessions.sessions } />
             )
-            }
+            } 
         </Container>
     )
 }
